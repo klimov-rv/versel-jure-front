@@ -209,3 +209,46 @@
 .menu__footer {
   margin-top: 40px;
 }
+
+.c-account__inner {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 29px 40px 29px 22px;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #adadb0;
+  border-radius: 16px;
+}
+.c-account__inner:focus {
+  outline: none;
+}
+.c-account__name {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 500;
+  color: #848488;
+}
+.c-account__help {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  z-index: 1;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: normal;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  color: #bababa;
+}
