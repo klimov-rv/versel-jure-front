@@ -1,0 +1,211 @@
+.menu {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 499;
+  background: #fff;
+  -webkit-transform: translate(0, -104vh);
+  -ms-transform: translate(0, -104vh);
+  transform: translate(0, -104vh);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.menu.is--active {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.menu.is--active .menu__wrap {
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out 0.2s;
+  transition: all 0.25s ease-in-out 0.2s;
+}
+@media screen and (min-width: 1200px) {
+  .menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu {
+    top: 64px;
+  }
+}
+.menu__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 40px 16px 34px;
+  height: calc(100dvh - 80px);
+  opacity: 0;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+@media screen and (max-width: 767px) {
+  .menu__wrap {
+    padding: 4px 16px 32px;
+    height: calc(100dvh - 64px);
+  }
+}
+.menu__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .menu__main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu__block {
+    max-width: 360px;
+    width: calc(100% - 8px);
+  }
+  .menu__block:nth-child(2n) {
+    margin-left: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu__block {
+    width: 100%;
+  }
+  .menu__block:nth-last-child(n + 2) {
+    margin-top: 40px;
+  }
+}
+.menu__account {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .menu__account {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu__controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.menu__ai {
+  width: 100%;
+  background: #f0f0f0;
+}
+@media screen and (max-width: 767px) {
+  .menu__ai {
+    padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: rgba(0, 0, 0, 0);
+  }
+  .menu__ai > span {
+    display: none;
+  }
+  .menu__ai > img {
+    position: static;
+    width: 40px;
+    height: 40px;
+  }
+}
+.menu__ai + .menu__btn,
+.menu__btn + .menu__ai,
+.menu__btn + .menu__btn {
+  margin-top: 24px;
+}
+@media screen and (max-width: 767px) {
+  .menu__ai + .menu__btn,
+  .menu__btn + .menu__ai,
+  .menu__btn + .menu__btn {
+    margin-top: 0;
+    margin-left: 12px;
+  }
+}
+.menu__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: auto;
+  padding: 16.5px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.menu__btn > svg {
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  color: #525252;
+}
+.menu__btn > * + * {
+  margin-left: 8px;
+}
+.menu__btn:focus {
+  outline: none;
+}
+@media screen and (min-width: 768px) {
+  .menu__btn--mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu__btn {
+    padding: 4px;
+    background: rgba(0, 0, 0, 0);
+  }
+  .menu__btn > span {
+    display: none;
+  }
+  .menu__btn > * + * {
+    margin-left: 0;
+  }
+}
+.menu__footer {
+  margin-top: 40px;
+}

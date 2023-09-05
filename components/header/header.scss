@@ -1,0 +1,409 @@
+@import 'styles/config';
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 500;
+  background: $root-base-on-dark;
+  transition: all $transition-default;
+
+  @media screen and (max-width: 767px) {
+    &.is--active {
+      background: $white-color;
+      .header {
+        &__btn {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+      .hamburger {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    min-height: 80px;
+    &:not(.header__wrapper--inner) {
+      .header {
+        &__left {
+          @media screen and (max-width: 1199px) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            max-width: none;
+            width: fit-content;
+          }
+        }
+        &__center {
+          @media screen and (max-width: 1199px) {
+            display: none;
+          }
+        }
+        &__right {
+          @media screen and (max-width: 1199px) {
+            order: -3;
+            justify-content: space-between;
+            max-width: none;
+          }
+        }
+      }
+    }
+    &--inner {
+      .header {
+        &__left {
+          @media screen and (max-width: 1199px) {
+            max-width: none;
+            width: fit-content;
+          }
+        }
+        &__center {
+          @media screen and (max-width: 1199px) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            margin-right: 0;
+            margin-left: 0;
+            max-width: none;
+            width: fit-content;
+          }
+        }
+        &__right {
+          @media screen and (max-width: 1199px) {
+            max-width: none;
+            width: fit-content;
+          }
+        }
+        &__controls {
+          @media screen and (max-width: 1199px) {
+            &--first {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 12px 0;
+      min-height: 64px;
+    }
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    max-width: 253px;
+    width: 100%;
+
+    @media screen and (min-width: 1200px) and (max-width: 1299px) {
+      max-width: 193px;
+    }
+  }
+  &__logotype {
+    display: block;
+    max-width: 172px;
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media screen and (max-width: 1199px) {
+      max-width: 129px;
+    }
+    @media screen and (max-width: 767px) {
+      &--small {
+        max-width: 24px;
+        min-width: 24px;
+      }
+    }
+  }
+  &__center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-left: 20px;
+    max-width: 797px;
+    width: 100%;
+  }
+  &__search {
+    max-width: 523px;
+    width: 100%;
+  }
+  &__ai {
+    margin-left: 20px;
+  }
+  &__heading {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 253px;
+    width: 100%;
+
+    @media screen and (min-width: 1200px) and (max-width: 1299px) {
+      max-width: 193px;
+    }
+  }
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
+  &__controls + &__controls {
+    margin-left: 22px;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    transition: all $transition-default;
+
+    & > svg {
+      min-width: 24px;
+      width: 24px;
+      height: 24px;
+      color: $icon-base-on-light-shift-up;
+    }
+
+    & > * + * {
+      margin-left: 10px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      & > svg {
+        color: $icon-accent-on-light-shift-down;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+
+    @media screen and (hover: hover) {
+      &:hover {
+        color: $root-base-on-light-shift-up;
+        & > svg {
+          color: $icon-accent-on-light;
+        }
+      }
+      &:active {
+        & > svg {
+          color: $icon-accent-on-light-shift-down;
+        }
+      }
+    }
+    @media screen and (max-width: 1199px) {
+      & > svg {
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+        color: $icon-base-on-light;
+      }
+      &--tablet-hidden {
+        display: none;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      &--desktop-hidden {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      &:not(.header__btn--mobile) {
+        display: none;
+      }
+      &--mobile-hidden {
+        display: none;
+      }
+    }
+  }
+  &__user {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-right: 16px;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.hamburger {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 0;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: all $transition-default;
+  &:focus {
+    outline: none;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    &.is--active {
+      .hamburger {
+        &__inner {
+          &:first-child {
+            top: 14.5px;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            top: 14.5px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__inner {
+    position: absolute;
+    left: 4px;
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: $icon-base-on-light;
+    transition: all $transition-default;
+    &:first-child {
+      top: 8px;
+    }
+    &:nth-child(2) {
+      top: 14.5px;
+    }
+    &:last-child {
+      top: 21px;
+    }
+
+    @media screen and (max-width: 767px) {
+      left: 8px;
+      &:first-child {
+        top: 12px;
+      }
+      &:nth-child(2) {
+        top: 18.5px;
+      }
+      &:last-child {
+        top: 25px;
+      }
+    }
+  }
+}
+
+.c-search {
+  &__inner {
+    position: relative;
+  }
+  &__input {
+    appearance: none;
+    display: block;
+    padding: 16px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: $root-base-on-light;
+    background: $back-base-on-light;
+    border: none;
+    border-radius: 8px;
+    transition: all $transition-default;
+    &::placeholder {
+      opacity: 1;
+      color: $root-base-on-light;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.ai-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 16px 64px 16px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: left;
+  background: $back-base-on-light;
+  border: none;
+  border-radius: 8px;
+  transition: all $transition-default;
+  &:focus {
+    outline: none;
+  }
+  img {
+    position: absolute;
+    top: -11px;
+    right: -14px;
+    z-index: -1;
+    display: block;
+    width: 79px;
+    height: 62px;
+    object-fit: contain;
+  }
+  &--lg {
+    padding: 25px 64px 25px 32px;
+    font-size: 18px;
+    img {
+      top: -14px;
+      right: -6px;
+      width: 140px;
+      height: 97px;
+    }
+  }
+
+  @media screen and (hover: hover) {
+    &:hover {
+      background: $white-color;
+    }
+  }
+}

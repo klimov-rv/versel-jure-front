@@ -1,0 +1,89 @@
+$primary-font-family: 'Inter', sans-serif; // body font-family
+$primary-font-size: 16px; // body font-size
+$primary-line-height: 1.25; // body line-height
+
+$black-color: #000000;
+$white-color: #FFFFFF;
+
+$root-base-on-light: #313131;
+$root-base-on-light-shift-up: #4D4C4C;
+$root-base-on-light-shift-down: #202020;
+$root-base-on-dark: #F5F5F5;
+$root-base-on-dark-shift-up: #FFFFFF;
+$root-base-on-dark-shift-down: #ECECEC;
+
+$root-faint-on-light: #959598;
+$root-faint-on-light-shift-up: #ADADB0;
+$root-faint-on-light-shift-down: #7D7F83;
+$root-faint-on-dark: #F0F0F0;
+$root-faint-on-dark-shift-down: #E6E7E9;
+
+$root-accent-on-light: #6890F2;
+$root-accent-on-light-shift-up: #9BB8FF;
+$root-accent-on-light-shift-down: #3B68D9;
+
+$root-complement-on-dark-shift-up: #D4D3FF;
+$root-complement-on-light: #FF8B59;
+$root-complement-on-light-shift-up: #FFDECC;
+$root-complement-on-light-shift-down: #E27241;
+
+$root-critic-on-light: #FE687A;
+
+$back-base-on-light: #EEEEEE;
+
+$fancy-complement-on-dark: linear-gradient(180deg, #9389E0 0%, #5247A9 100%);
+$fancy-complement-on-dark-shift-down: linear-gradient(180deg, #847ACA 0%, #3A3278 100%);
+$fancy-accent: linear-gradient(130deg, #747CE0 0%, #4649A6 46.88%, #4546A0 53.65%, #3E2E75 100%);
+
+$text-faint-on-light: #8F9093;
+$text-faint-on-light-shift-up: #BABABA;
+$text-faint-on-light-shift-down: #848488;
+
+$text-base-on-light: #313131;
+$text-base-on-light-shift-down: #1B1E24;
+$text-base-on-light-shift-up: #585A5E;
+$text-base-on-dark: #FAFAFD;
+
+$text-accent-on-light: #2B5CD6;
+$text-accent-on-light-shift-up: #477CFF;
+$text-accent-on-dark-shift-up: #6A96EE;
+
+$text-complement-on-light-shift-up: #FD8653;
+
+$text-critic-on-light: #D55766;
+
+$icon-base-on-light: #525252;
+$icon-base-on-light-shift-up: #9E9E9E;
+$icon-base-on-light-shift-down: #14171B;
+$icon-base-on-dark-shift-up: #FDFDFE;
+$icon-base-on-dark-shift-down: #ECEEF1;
+
+$icon-faint-on-light: #898989;
+$icon-faint-on-light-shift-up: #CACACA;
+$icon-faint-on-light-shift-down: #7A7B7D;
+
+$icon-accent-on-light: #396EF0;
+$icon-accent-on-light-shift-up: #5184FF;
+$icon-accent-on-light-shift-down: #2A52B5;
+$icon-critic-on-dark-shift-up: #E4426A;
+$icon-critic-on-dark-shift-down: #AF052F;
+
+$icon-complement-on-light: #F37C49;
+$icon-complement-on-light-shift-down: #CC6C42;
+
+$line-base-on-light: #06080B;
+$line-base-on-light-shift-up: #939495;
+$line-base-on-light-shift-down: #010102;
+$line-base-on-dark-shift-down: #F0F0F1;
+$line-base-on-dark: #FBFBFC;
+$line-faint-on-light-shift-down: #D8D8D8;
+$line-faint-on-light: #BFC0C3;
+$line-accent-on-light: #336EFF;
+$line-accent-on-light-shift-up: #7099FF;
+
+$container-width: 1384px;
+$container-padding: 20px;
+$container-mobile-padding: 16px;
+
+$transition-default: 0.25s ease-in-out;
+$transition-fast: 0.15s ease;

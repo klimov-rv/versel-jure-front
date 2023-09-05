@@ -1,0 +1,75 @@
+@import "styles/config";
+.footer {
+  &__socmedia + &__nav,
+  &__nav + &__socmedia {
+    margin-top: 34px;
+  }
+}
+
+.footer-socmedia {
+  &__wrapper {
+    display: flex;
+    width: fit-content;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-width: 46px;
+    width: 46px;
+    height: 46px;
+    font-size: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    & > svg {
+      min-width: 46px;
+      width: 46px;
+      height: 46px;
+      color: $text-base-on-light;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    @media screen and (hover: hover) {
+      &:hover {
+        & > svg {
+          color: $text-base-on-light-shift-down;
+        }
+      }
+    }
+  }
+  &__btn + &__btn {
+    margin-left: 11px;
+  }
+}
+
+.footer-nav {
+  &__wrapper {
+    display: flex;
+  }
+  &__list + &__list {
+    margin-left: 29px;
+  }
+  &__item + &__item {
+    margin-top: 7px;
+  }
+  &__link {
+    display: block;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: normal;
+    color: $text-faint-on-light;
+    &:hover {
+      color: $text-faint-on-light;
+    }
+
+    @media screen and (hover: hover) {
+      &:hover {
+        color: $text-base-on-light;
+      }
+    }
+  }
+}
