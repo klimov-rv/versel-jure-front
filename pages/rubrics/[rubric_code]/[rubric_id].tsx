@@ -32,6 +32,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const {rubric_code, rubric_id} = context.query;
     try {
         const response = await axios.get(`${serverUrl}/rubric/${rubric_id}?limit=10&page=1`)
+        //@ts-ignore
         const rubrics = Object.values(response.data.message[rubric_code]);
         const info = response.data.message.info;
         return {
@@ -64,6 +65,7 @@ const Rubrics: NextPage<{ rubrics: IValue[] , info: IInfo}> = ({rubrics, info}) 
             if(currentPage <= maxPage){
                 const response = await axios.get(`${serverUrl}/rubric/${rubric_id}?limit=10&page=${currentPage}`)
                     .finally(() => setFetching(false));
+                //@ts-ignore
                 const responseRubrics: IValue[] = Object.values(response.data.message[rubric_code]);
                 setNewRubrics([...newRubrics, ...responseRubrics]);
                 setCurrentPage(prevState => prevState + 1);
@@ -87,7 +89,7 @@ const Rubrics: NextPage<{ rubrics: IValue[] , info: IInfo}> = ({rubrics, info}) 
         }
     }, [])
 
-    const scrollHandler = (e) => {
+    const scrollHandler = (e: any) => {
         if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 2000){
             setFetching(true)
         }
